@@ -1,0 +1,26 @@
+{
+  "name": "squoosh-exe",
+  "private": true,
+  "type": "module",
+  "bin": "./index.js",
+  "scripts": {
+    "build:bundle": "node build.mjs",
+    "build:exe": "node build.mjs && pkg -c package.json dist/bootstrap.cjs --targets node16-win-x64 --output dist/squoosh-cli.exe"
+  },
+  "dependencies": {
+    "@squoosh/cli": "^0.7.1"
+  },
+  "devDependencies": {
+    "esbuild": "^0.19.12",
+    "pkg": "^5.8.1"
+  },
+  "pkg": {
+    "scripts": [
+      "dist/bootstrap.cjs",
+      "node_modules/@squoosh/lib/build/index.js"
+    ],
+    "assets": [
+      "node_modules/@squoosh/lib/build/*.wasm"
+    ]
+  }
+}
