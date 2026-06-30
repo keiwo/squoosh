@@ -1,4 +1,4 @@
-# squoosh
+# Squoosh
 
 A single-file Windows executable wrapper for the Squoosh CLI, designed for batch image processing.
 
@@ -7,7 +7,7 @@ A single-file Windows executable wrapper for the Squoosh CLI, designed for batch
 
 ## Usage
 
-### 1. Basic JPEG compression
+### 1. Default configuration from Squoosh desktop App
 
 ```
 .\squoosh-cli.exe --mozjpeg '{"quality": 75}' -d target_path source_path
@@ -15,7 +15,7 @@ A single-file Windows executable wrapper for the Squoosh CLI, designed for batch
 
 This processes images from `source_path` and writes the output to `target_path`. Without `source_path`, it processes all images at current path.
 
-### 2. Resize, suffix and compress
+### 2. Resize and suffix 
 
 ```
 .\squoosh-cli.exe --mozjpeg '{"quality": 75}' --resize '{"enabled": true, "width": 720}' --suffix -small -d small
@@ -26,6 +26,8 @@ This compresses images and resizes them to a width of 720 pixels before saving t
 ## Notes
 
 - It do not support wildcard at Windows.
+- It do not overwrite existing files.
+- target_path will automatically created.
 
 
 ## Build
