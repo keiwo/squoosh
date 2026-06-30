@@ -15,13 +15,13 @@ A single-file Windows executable wrapper for the Squoosh CLI, designed for batch
 
 This processes images from `source_path` and writes the output to `target_path`. Without `source_path`, it processes all images at current path.
 
-### 2. Resize and compress
+### 2. Resize, suffix and compress
 
 ```
 .\squoosh-cli.exe --mozjpeg '{"quality": 75}' --resize '{"enabled": true, "width": 720}' --suffix -small -d small
 ```
 
-This compresses images and resizes them to a width of 720 pixels before saving them to the `small` folder.
+This compresses images and resizes them to a width of 720 pixels before saving them to with `-small` suffix the `small` folder.
 
 ## Notes
 
