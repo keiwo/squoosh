@@ -36,16 +36,7 @@ This compresses images and resizes them to a width of 720 pixels before saving t
 - Windows
 - Node.js 16.20.2
 
-Install dependencies `npm.cmd install` and then edit line 180-181 in `node_modules\@squoosh\cli\src\index.js` to fix suffix becoming prefix from 
-```
-program.opts().suffix +
-    path.basename(originalFile, path.extname(originalFile))
-```
-to
-```
-path.basename(originalFile, path.extname(originalFile)) + 
-    program.opts().suffix
-```
+Install dependencies `npm.cmd install` and then replace `node_modules\@squoosh\cli\src\index.js` with [index-replace.js](/index-replace.js) and rename it to `index.js`
 
 Build the executable:
 
